@@ -27,6 +27,7 @@ import open3d as o3d
 
 if __name__ == "__main__":
     # Set up command line argument parser
+    os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:256"
     parser = ArgumentParser(description="Testing script parameters")
     model = ModelParams(parser, sentinel=True)
     pipeline = PipelineParams(parser)
